@@ -1,0 +1,422 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+
+
+/* Baaki ka pura CSS yahan daalo jo aapke style tag me tha */
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 5px 32px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.site-title {
+  font-family: "Merriweather", serif;
+  color: #d97706;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+nav a.active {
+  color: #d97706;
+  font-weight: 700;
+  border-bottom: 2px solid #d97706;
+  padding-bottom: 4px;
+}
+
+nav a:hover {
+  color: #d97706;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-btn,
+.cart-btn {
+  font-size: 1.7rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  padding: 6px;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #b85c02;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.menu-btn {
+  display: none;
+  /* hidden on desktop */
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 5px 14px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    background: #fff;
+    position: absolute;
+    top: 64px;
+    right: 18px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    z-index: 25;
+    min-width: 160px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+    /* show on mobile */
+  }
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.feature {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #228b22;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 700px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 15px;
+  }
+
+  .feature {
+    width: 90%;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Products */
+
+/* Cart modal styling */
+
+/* footer */
+footer {
+  background: #1a1a1a;
+  color: #ddd;
+  padding: 50px 8% 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 12px;
+  font-family: "Merriweather", serif;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  color: #d97706;
+  margin-bottom: 12px;
+}
+
+.footer-col p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+/* Social Icons */
+.footer-social {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  font-size: 1.8rem;
+  color: #d97706;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: left;
+    gap: 25px;
+  }
+}
+
+/* Confirm modal overlay */
+#confirmModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 7000;
+  /* just above cart modal */
+  align-items: center;
+  justify-content: center;
+}
+
+#confirmModal[aria-hidden="false"] {
+  display: flex;
+}
+
+/* Confirm box (same look as Cart modal) */
+.confirm-box {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 14px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  position: relative;
+  text-align: center;
+  max-height: 85vh;
+  overflow-y: auto;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.confirm-box h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: #d97706;
+  font-family: "Merriweather", serif;
+  font-size: 1.25rem;
+}
+
+.confirm-box p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.confirm-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirm-btn {
+  background: #d97706;
+  color: #fff;
+}
+
+.confirm-btn:hover {
+  background: #b85c02;
+}
+
+.cancel-btn {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #e4e4e4;
+}
+
+/* Container for label + input + error */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Label styling */
+.form-group label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Input field styling */
+.form-group input {
+  width: 93%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Input focus state (matches confirm-btn color) */
+.form-group input:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.2);
+}
+
+/* Placeholder styling */
+.form-group input::placeholder {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* Error message */
+.error-text {
+  color: #dc2626;
+  /* subtle red for error */
+  font-size: 4rem;
+  margin-top: 6px;
+  font-weight: 500;
+}

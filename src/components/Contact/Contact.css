@@ -1,0 +1,153 @@
+/* =============================
+   🌿 CONTACT SECTION (Responsive)
+   ============================= */
+#contact {
+  background: #f9f9f9;
+  width: 100%;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+
+#contact h1 {
+  text-align: center;
+  color: #d97706;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* ✅ Base layout: stacked (for mobile first) */
+#contact>div {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* =============================
+   📝 INFO SECTION
+   ============================= */
+.contact-info {
+  background: #fffbea;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #f1e4c4;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.contact-info strong {
+  color: #b85c02;
+}
+
+.contact-info em {
+  color: #d97706;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* =============================
+   📬 FORM STYLES
+   ============================= */
+.contact-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+}
+
+.contact-form label {
+  font-weight: 600;
+  margin: 10px 0 5px 0;
+  color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 5px rgba(217, 119, 6, 0.3);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* =============================
+   🚀 SUBMIT BUTTON
+   ============================= */
+.contact-form button[type="submit"] {
+  margin-top: 15px;
+  background: #d97706;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.contact-form button[type="submit"]:hover {
+  background: #b85c02;
+  transform: translateY(-2px);
+}
+
+/* =============================
+   💻 Desktop layout (side-by-side)
+   ============================= */
+@media (min-width: 901px) {
+  #contact>div {
+    flex-direction: row;
+    /* Side by side */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    flex: 1;
+    width: 50%;
+  }
+}
+
+/* =============================
+   📱 Mobile Responsiveness
+   ============================= */
+@media (max-width: 900px) {
+  #contact {
+    max-width: 90%;
+    padding: 25px 20px;
+  }
+
+  #contact h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form button[type="submit"] {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+}

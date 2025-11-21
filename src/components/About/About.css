@@ -1,0 +1,225 @@
+/* MAIN SECTION */
+.about-section {
+  padding: 60px 20px;
+  background: #f7f7f7;
+  border-radius: 12px;
+}
+
+/* SECTION HEADING */
+.about-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #d97706;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.about-heading::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: #d97706;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* ROW FLEX SYSTEM */
+.about-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* MAKES BOTH CARDS SAME HEIGHT */
+.about-container>.about-card {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  flex: 1;
+  min-width: 380px;
+  max-width: 48%;
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-left: 8px solid #d97706;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 340px;
+}
+
+/* Hover Effect */
+/* .about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+} */
+
+/* LEFT CARD TEXT */
+/* Scrollable Left Card */
+.about-card.about-text-card {
+  overflow-y: auto;
+  height: 350px;
+  /* match right card */
+  padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.about-text-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about-text-card p {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.about-text-card ul {
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+.about-text-card li {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* SLIDER (Right Card) */
+.about-slider-card {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.about-slider {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+}
+
+.about-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+}
+
+.about-slider img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* RESPONSIVE FIXES */
+/* =======================================
+   📱 MOBILE OPTIMIZATION FOR SMARTPHONE
+   ======================================= */
+
+@media (max-width: 600px) {
+
+  .about-section {
+    padding: 30px 10px;
+    border-radius: 0;
+    background: #fafafa;
+  }
+
+  /* Smaller heading */
+  .about-heading {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+
+  .about-heading::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  /* Cards stacked vertically */
+  .about-container>.about-card {
+    min-width: 95%;
+    max-width: 60%;
+    border-radius: 14px;
+    padding: 18px 14px;
+    min-height: auto;
+    margin-bottom: 15px;
+    border-left-width: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+  }
+
+  .about-card.about-text-card {
+    overflow-y: none;
+    height: 100%;
+    /* match right card */
+    /* padding-right: 10px; */
+  }
+
+  /* Custom Scrollbar */
+  /* .about-text-card::-webkit-scrollbar {
+      width: 6px;
+    } */
+
+  /* Text readability */
+  .about-text-card p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .about-text-card li {
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+  }
+
+  /* Slider height adjust for mobile */
+  .about-slider {
+    min-height: 230px;
+    max-height: 260px;
+    border-radius: 14px;
+  }
+
+  .about-slider img {
+    border-radius: 14px;
+    transform: scale(1.05);
+  }
+
+}
+
+/* Extra small screens (older phones 320px width) */
+@media (max-width: 380px) {
+
+  .about-heading {
+    font-size: 1.4rem;
+  }
+
+  .about-container>.about-card {
+    padding: 14px 10px;
+  }
+
+  .about-text-card p,
+  .about-text-card li {
+    font-size: 0.88rem;
+  }
+
+  .about-slider {
+    min-height: 200px;
+  }
+}
+
+/* Sub Headings */
+.sub-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #b45309;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
