@@ -68,7 +68,7 @@
 
 @media (max-width: 900px) {
   .features {
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 20px;
     padding: 40px 6%;
   }

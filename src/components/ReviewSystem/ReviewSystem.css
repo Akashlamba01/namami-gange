@@ -165,7 +165,7 @@
    ⭐ REVIEW FORM (Sticky Sidebar)
    =========================================== */
 .review-form {
-  width: 380px;
+  /* width: 380px; */
   flex-shrink: 0;
   /* prevent squishing */
   position: sticky;
