@@ -88,7 +88,7 @@ function App() {
       <main
         style={{
           // paddingTop: "90px", // height of header
-          paddingBottom: "90px", // height of footer
+          // paddingBottom: "90px", // height of footer
           minHeight: "100vh",
           backgroundColor: "#f5f6f6",
         }}

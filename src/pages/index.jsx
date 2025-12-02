@@ -12,10 +12,9 @@ const IndexPage = ({ onAddToCart, useProducts, loading }) => {
       <Hero />
       <Features />
 
+      <Products onAddToCart={onAddToCart} useProducts={useProducts} loading={loading} />
       <About />
       <Process />
-
-      <Products onAddToCart={onAddToCart} useProducts={useProducts} loading={loading} />
       <ReviewSystem />
     </>
   );

@@ -4,8 +4,7 @@ import ReviewForm from "../ReviewForm/ReviewForm";
 
 const ReviewSystem = () => {
   return (
-    <div>
-
+    <div className="reviews-system-section">
       <h1 className="about-heading">Customer Reviews & Ratings</h1>
       <div className="review-container">
         <Reviews />

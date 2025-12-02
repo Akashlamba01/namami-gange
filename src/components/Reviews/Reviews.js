@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const allReviews = [
   { name: "Saurabh", rating: 5, text: "Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality!", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Sumit Kumar", rating: 4, text: "Good experience overall, will order again. Packing could be improved.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+  { name: "Sumit Kumar", rating: 4, text: "Good experience overall, will order again. Packing could be improved.", img: ["https://m.media-amazon.com/images/I/71fMyOXXvXL.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
   { name: "Akash S.", rating: 5, text: "Pure and high-quality Gangajal delivered right to my doorstep.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
   { name: "Nisha", rating: 5, text: "Fast delivery and excellent product quality.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
   { name: "Rohan", rating: 4, text: "Satisfied with the purity, plan to reorder.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
@@ -22,6 +22,27 @@ const Reviews = () => {
 
   const visibleReviews = allReviews.slice(0, reviewsToShow);
   const avgRating = allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;
+
+  // img popup
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalImages, setModalImages] = useState([]);
+  const [modalIndex, setModalIndex] = useState(0);
+
+  const openModal = (images, index = 0) => {
+    setModalImages(images);
+    setModalIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => setModalOpen(false);
+
+  const showNext = () => {
+    setModalIndex((prev) => (prev + 1) % modalImages.length);
+  };
+
+  const showPrev = () => {
+    setModalIndex((prev) => (prev - 1 + modalImages.length) % modalImages.length);
+  };
 
   return (
     <section >
@@ -53,6 +74,7 @@ const Reviews = () => {
                       src={review.img[0]}
                       alt="review media"
                       className="review-image-thumb"
+                      onClick={() => openModal(review.img, 0)}
                     />
 
                     {/* +More Badge */}
@@ -75,6 +97,39 @@ const Reviews = () => {
           </div>
         )}
       </div>
+
+      {modalOpen && (
+        <div className="rv-modal-backdrop" onClick={closeModal}>
+          <div className="rv-modal-content" onClick={(e) => e.stopPropagation()}>
+
+            <button className="rv-close-btn" onClick={closeModal}>✕</button>
+
+            <button className="rv-nav-btn rv-prev" onClick={showPrev}>‹</button>
+
+            <div className="rv-modal-image-holder">
+              <img
+                src={modalImages[modalIndex]}
+                alt="full-preview"
+                className="rv-modal-image"
+              />
+            </div>
+
+            <button className="rv-nav-btn rv-next" onClick={showNext}>›</button>
+
+            <div className="rv-thumb-row">
+              {modalImages.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt=""
+                  className={`rv-thumb ${i === modalIndex ? "active" : ""}`}
+                  onClick={() => setModalIndex(i)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
 
   );

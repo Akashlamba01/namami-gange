@@ -164,3 +164,22 @@
 .reviews .view-more-btn button:hover {
   background: #b85c02;
 }
+
+.review-flex {
+  display: flex;
+  gap: 15px;
+  padding: 15px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.review-avatar-box {
+  flex-shrink: 0;
+}
+
+.review-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
