@@ -198,6 +198,7 @@
 
 /* Inputs */
 .review-form input[type="text"],
+.review-form input[type="email"],
 .review-form textarea,
 .review-form input[type="file"] {
   width: 94%;
@@ -245,7 +246,7 @@
 .review-form .star:hover,
 .review-form .star.active {
   color: #fbbf24;
-  transform: scale(1.15);
+  transform: scale(1.25);
 }
 
 /* Submit button */
