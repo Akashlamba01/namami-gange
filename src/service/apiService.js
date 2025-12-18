@@ -7,16 +7,35 @@ const handleApiError = (error, endpoint, method) => {
 
 const request = async (method, endpoint, data, requireAuth = true) => {
   try {
-    const options = {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        ...(requireAuth && { Authorization: `Bearer ${localStorage.getItem('accessToken')}` }),
-      },
-      credentials: 'same-origin',
+
+    const isFormData = data instanceof FormData;
+
+    const headers = {
+      ...(requireAuth && {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      }),
     };
 
-    if (data) options.body = JSON.stringify(data);
+    if (!isFormData) {
+      headers["Content-Type"] = "application/json";
+    }
+
+    const options = {
+      method,
+      headers,
+      credentials: "same-origin",
+    };
+
+    // const options = {
+    //   method,
+    //   headers: {
+    //     'Content-Type': isFormData ? 'multipart/form-data' : 'application/json',
+    //     ...(requireAuth && { Authorization: `Bearer ${localStorage.getItem('accessToken')}` }),
+    //   },
+    //   credentials: 'same-origin',
+    // };
+
+    if (data) options.body = isFormData ? data : JSON.stringify(data);
 
     const response = await fetch(endpoint, options);
 

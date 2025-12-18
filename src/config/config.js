@@ -6,5 +6,7 @@ export const API_URLS = {
   logout: `${API_ROOT}/admin/logout`,
   getProducts: `${API_ROOT}/products/listing`,
   chekoutCart: `${API_ROOT}/whatsapp/checkout`,
-  chekoutOnlyCart: `${API_ROOT}/products/checkout`
+  chekoutOnlyCart: `${API_ROOT}/products/checkout`,
+  createRatting: `${API_ROOT}/products/create-ratting`,
+  listingRatting: `${API_ROOT}/products/listing-ratting`,
 };

@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 // import "./Reviews.css";
 
-const allReviews = [
-  { name: "Saurabh", rating: 5, text: "Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality!", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Sumit Kumar", rating: 4, text: "Good experience overall, will order again. Packing could be improved.", img: ["https://m.media-amazon.com/images/I/71fMyOXXvXL.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Akash S.", rating: 5, text: "Pure and high-quality Gangajal delivered right to my doorstep.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Nisha", rating: 5, text: "Fast delivery and excellent product quality.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Rohan", rating: 4, text: "Satisfied with the purity, plan to reorder.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Anita", rating: 5, text: "Very trustworthy site for Gangajal.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Manoj", rating: 3, text: "Price is a bit high but quality is good.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Pooja", rating: 5, text: "Excellent packaging and genuine product.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Vikram", rating: 4, text: "Good shopping experience and timely delivery.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-  { name: "Sunita", rating: 5, text: "Highly recommended for authentic Gangajal.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
-];
+// const allReviews = [
+//   { name: "Saurabh", rating: 5, text: "Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality! Authentic Gangajal with quick delivery. Very satisfied with the quality!", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Sumit Kumar", rating: 4, text: "Good experience overall, will order again. Packing could be improved.", img: ["https://m.media-amazon.com/images/I/71fMyOXXvXL.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Akash S.", rating: 5, text: "Pure and high-quality Gangajal delivered right to my doorstep.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Nisha", rating: 5, text: "Fast delivery and excellent product quality.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Rohan", rating: 4, text: "Satisfied with the purity, plan to reorder.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Anita", rating: 5, text: "Very trustworthy site for Gangajal.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Manoj", rating: 3, text: "Price is a bit high but quality is good.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Pooja", rating: 5, text: "Excellent packaging and genuine product.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Vikram", rating: 4, text: "Good shopping experience and timely delivery.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+//   { name: "Sunita", rating: 5, text: "Highly recommended for authentic Gangajal.", img: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4XswNs6lNRPMfJcGyg5P7NRazhxow5Yz-w&s"] },
+// ];
 
-const Reviews = () => {
+const Reviews = ({ allReviews }) => {
+  console.log("All Reviews in Reviews component:", allReviews[0].images[0].url);
   const [reviewsToShow, setReviewsToShow] = useState(3);
   const reviewListRef = React.useRef(null);
 
   const handleViewMore = () => setReviewsToShow(prev => prev + 3);
 
   const visibleReviews = allReviews.slice(0, reviewsToShow);
-  const avgRating = allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;
+  const avgRating = allReviews.reduce((sum, r) => sum + r.ratting, 0) / allReviews.length;
 
   // img popup
   const [modalOpen, setModalOpen] = useState(false);
@@ -57,30 +58,30 @@ const Reviews = () => {
                 <p className="review-header">
                   {review.name}
                   <span className="review-stars">
-                    {"★".repeat(review.rating) + "☆".repeat(5 - review.rating)}
+                    {"★".repeat(review.ratting) + "☆".repeat(5 - review.ratting)}
                   </span>
                   <span className="verified">✔ Verified Purchase</span>
                 </p>
 
-                <p className="review-text">{review.text}</p>
+                <p className="review-text">{review.description}</p>
               </div>
 
               {/* Review Images on the RIGHT */}
-              {review.img?.length > 0 && (
+              {review.images?.length > 0 && (
                 <div className="review-right">
 
                   <div className="img-thumb-wrapper">
                     <img
-                      src={review.img[0]}
+                      src={review.images[0].url}
                       alt="review media"
                       className="review-image-thumb"
-                      onClick={() => openModal(review.img, 0)}
+                      onClick={() => openModal(review.images, 0)}
                     />
 
                     {/* +More Badge */}
-                    {review.img.length > 1 && (
+                    {review.images.length > 1 && (
                       <span className="more-badge">
-                        +{review.img.length - 1}
+                        +{review.images.length - 1}
                       </span>
                     )}
                   </div>
@@ -108,7 +109,7 @@ const Reviews = () => {
 
             <div className="rv-modal-image-holder">
               <img
-                src={modalImages[modalIndex]}
+                src={modalImages[modalIndex].url}
                 alt="full-preview"
                 className="rv-modal-image"
               />
@@ -120,7 +121,7 @@ const Reviews = () => {
               {modalImages.map((img, i) => (
                 <img
                   key={i}
-                  src={img}
+                  src={img.url}
                   alt=""
                   className={`rv-thumb ${i === modalIndex ? "active" : ""}`}
                   onClick={() => setModalIndex(i)}
